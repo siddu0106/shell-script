@@ -2,7 +2,7 @@
 
 echo "the user is"
 
-read -s USERNAME
+read USERNAME
 
 echo "user is : $USERNAME"
 
