@@ -2,4 +2,4 @@
 
 PERSONS=("Siddu" "Seeta" "Siva")
 
-echo "Person name is : ${PERSONS[0]}"
+echo "Person name is : ${PERSONS[1]}"
