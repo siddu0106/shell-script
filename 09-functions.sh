@@ -32,7 +32,7 @@ fi
 yum install mysql -y
 
 #Provide ext status input
-VALIDATE $? "MySQL Installation'
+VALIDATE $? "MySQL Installation"
 
 #3. Install postfix package for GMAIL
 
