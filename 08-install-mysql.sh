@@ -13,7 +13,7 @@ else
     echo "SUCCESS : Root user"
 fi
 
-#2. Install Mysql 
+#2. Install Mysql Package 
 
 yum install mysql -y
 
@@ -25,6 +25,18 @@ then
     exit 1
 else 
     echo "SUCCESS : Installation of Mysql is success"
+fi
+
+#3. Install postfix package for GMAIL
+
+yum install postfix -y
+
+if [ $? -ne 0 ]
+then
+    echo "ERROR : Installation of postfix is not success"
+    exit 1
+else 
+    echo "SUCCESS : Installation of postfix is success"
 fi
 
 
