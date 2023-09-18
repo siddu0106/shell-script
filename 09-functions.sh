@@ -3,16 +3,17 @@
 #1. check user is root or not
 USER=$(id -u)
 
+#this function is used to check the previous command status success or not
 VALIDATE()
 {
     #$1 --> It will receive the argument 1
     #$2 --> argument 2
     if [ $1 -ne 0 ]
     then
-        echo "ERROR : Installation is not success"
+        echo "ERROR : $2 is not success"
         exit 1
     else 
-        echo "SUCCESS : Installation is success"
+        echo "SUCCESS : $2 is success"
     fi
 }
 
@@ -31,13 +32,12 @@ fi
 yum install mysql -y
 
 #Provide ext status input
-VALIDATE $?
-
+VALIDATE $? "MySQL Installation'
 
 #3. Install postfix package for GMAIL
 
 yum install postfix -y
 
-VALIDATE $?
+VALIDATE $? "Postfix installation"
 
 
