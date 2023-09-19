@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#1. check user is root or not
-USER=$(id -u)
+DATE=$(date +%F-%H-%M-%S)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
-#this function is used to check the previous command status success or not
 VALIDATE()
 {
     #$1 --> It will receive the argument 1
@@ -17,6 +17,11 @@ VALIDATE()
     fi
 }
 
+#1. check user is root or not
+USER=$(id -u)
+
+#this function is used to check the previous command status success or not
+
 if [ $USER -ne 0 ]
 then 
     echo "ERROR : Not a Root user. Please use sudo su - command"
@@ -29,14 +34,15 @@ fi
 
 #2. Install Mysql Package 
 
-yum install mysql -y
+#I am storing the logs in this location not in terminal
+yum install mysql -y &>>$LOGFILE
 
 #Provide ext status input
 VALIDATE $? "MySQL Installation"
 
 #3. Install postfix package for GMAIL
 
-yum install postfix -y
+yum install postfix -y &>>$LOGFILE
 
 VALIDATE $? "Postfix installation"
 
