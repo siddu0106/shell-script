@@ -4,8 +4,8 @@ DATE=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
-R=\e[0;31m
-G=\e[0;30m
+R=\e[31m
+G=\e[30m
 Normal=\e[0m
 
 VALIDATE()
