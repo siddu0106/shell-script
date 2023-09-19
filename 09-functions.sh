@@ -4,16 +4,20 @@ DATE=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
+R=\e[0;31m
+G=\e[0;30m
+Normal=\e[0m
+
 VALIDATE()
 {
     #$1 --> It will receive the argument 1
     #$2 --> argument 2 --> to know the name
     if [ $1 -ne 0 ]
     then
-        echo "ERROR : $2 is not success"
+        echo -e "$R ERROR : $2 is not success $Normal"
         exit 1
     else 
-        echo "SUCCESS : $2 is success"
+        echo "$G SUCCESS : $2 is success $Normal"
     fi
 }
 
