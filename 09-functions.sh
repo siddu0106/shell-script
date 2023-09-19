@@ -17,7 +17,7 @@ VALIDATE()
         echo -e "$R ERROR : $Normal $2 is not success"
         exit 1
     else 
-        echo "$G SUCCESS : $Normal $2 is success"
+        echo -e "$G SUCCESS : $Normal $2 is success"
     fi
 }
 
