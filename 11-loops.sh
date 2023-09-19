@@ -28,6 +28,6 @@ done
 for j in $@
 do
     yum install $j -y &>>$LOGFILE
-    VALIDATE $? "$j"
+    VALIDATE $? $j
 done
 
