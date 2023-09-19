@@ -7,7 +7,7 @@ USER=$(id -u)
 VALIDATE()
 {
     #$1 --> It will receive the argument 1
-    #$2 --> argument 2
+    #$2 --> argument 2 --> to know the name
     if [ $1 -ne 0 ]
     then
         echo "ERROR : $2 is not success"
