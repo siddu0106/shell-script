@@ -33,7 +33,7 @@ then
     # if it's failure then stop don't proceed
     exit 1
 else
-    echo -e "$G SUCCESS : Root user"
+    echo -e "SUCCESS : Root user"
 fi
 
 #2. Install Mysql Package 
