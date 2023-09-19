@@ -27,7 +27,7 @@ done
 #all arguments are in $@
 for j in $@
 do
-    yum install $j -y &>>$LOGFILE
+    yum installl $j -y &>>$LOGFILE
     VALIDATE $? $j
 done
 
