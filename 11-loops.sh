@@ -4,13 +4,16 @@ DATE=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
+R="\e[31m"
+N="\e[0m"
+
 VALIDATE()
 {
     #$1 --> It will receive the argument 1
     #$2 --> argument 2 --> to know the name
     if [ $1 -ne 0 ]
     then
-        echo  "ERROR : $2 is not success"
+        echo -e "$R ERROR : $2 is not success $N"
         exit 1
     else 
         echo "SUCCESS : $2 is success"
@@ -21,7 +24,7 @@ USER=$(id -u)
 
 if [ $USER -ne 0 ]
 then 
-    echo "ERROR : Not a Root user. Please use sudo su - command"
+    echo -e "$R ERROR : Not a Root user. Please use sudo su - command $N"
     # it is our responsibility to check the command status. 1-127 not success.
     # if it's failure then stop don't proceed
     exit 1
