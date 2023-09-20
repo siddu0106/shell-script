@@ -2,7 +2,7 @@
 
 DATE=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$0
-LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
+LOGFILE=/root/shell-script/$SCRIPT_NAME-$DATE.log
 
 R="\e[31m"
 N="\e[0m"
@@ -13,7 +13,7 @@ VALIDATE()
     #$2 --> argument 2 --> to know the name
     if [ $1 -ne 0 ]
     then
-        echo -e "$R ERROR : $2 is not success $N"
+         echo -e "$R ERROR : $2 is not success$N"
         exit 1
     else 
         echo "SUCCESS : $2 is success"
