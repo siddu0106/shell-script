@@ -20,6 +20,8 @@ VALIDATE()
     fi
 }
 
+echo "Script Name : $SCRIPT_NAME"
+
 USER=$(id -u)
 
 if [ $USER -ne 0 ]
