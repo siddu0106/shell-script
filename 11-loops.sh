@@ -47,7 +47,7 @@ done
 for i in $@
 do
     #command to check wether the package is installed or not
-    yum list installed $i
+    yum list installed $i &>>$LOGFILE
     if [ $? -ne 0 ]
     then
         echo -e $i "is not installed. Lets Install it" $N
