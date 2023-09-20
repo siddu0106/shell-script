@@ -6,7 +6,7 @@ LOGFILE=/root/shell-script/shelscript-logs/$SCRIPT_NAME-$DATE.log
 
 R="\e[31m"
 N="\e[0m"
-
+Y="\e[33m"
 VALIDATE()
 {
     #$1 --> It will receive the argument 1
@@ -42,9 +42,17 @@ do
 done
 
 #all arguments are in $@
-for j in $@
+for i in $@
 do
-    yum install $j -y &>>$LOGFILE
-    VALIDATE $? $j
+    #command to check wether the package is installed or not
+    yum list installed $i
+    if [ $? -ne 0 ]
+    then
+        echo -e "$i is not installed. Lets Install it"
+        yum install $i -y &>>$LOGFILE
+        VALIDATE $? $i
+    else
+        echo -e  $Y "$i is already installed..."
+    fi
 done
 
