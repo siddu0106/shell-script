@@ -2,7 +2,7 @@
 
 DATE=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$0
-LOGFILE=/root/shell-script/$SCRIPT_NAME-$DATE.log
+LOGFILE=/root/shell-script/shelscript-logs/$SCRIPT_NAME-$DATE.log
 
 R="\e[31m"
 N="\e[0m"
