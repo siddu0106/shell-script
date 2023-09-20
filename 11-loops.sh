@@ -17,6 +17,18 @@ VALIDATE()
     fi
 }
 
+USER=$(id -u)
+
+if [ $USER -ne 0 ]
+then 
+    echo "ERROR : Not a Root user. Please use sudo su - command"
+    # it is our responsibility to check the command status. 1-127 not success.
+    # if it's failure then stop don't proceed
+    exit 1
+else
+    echo "SUCCESS : Root user"
+fi
+
 #print 1-100 numbers
 
 for i in {1..100}
@@ -27,6 +39,7 @@ done
 #all arguments are in $@
 for j in $@
 do
+   if [ $j ]
     yum install $j -y &>>$LOGFILE
     VALIDATE $? $j
 done
