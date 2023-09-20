@@ -39,7 +39,6 @@ done
 #all arguments are in $@
 for j in $@
 do
-   if [ $j ]
     yum install $j -y &>>$LOGFILE
     VALIDATE $? $j
 done
