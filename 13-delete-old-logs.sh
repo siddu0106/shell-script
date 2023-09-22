@@ -5,9 +5,15 @@ DATE=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$0
 LOGFILE=/root/shell-script/shelscript-logs/$SCRIPT_NAME-$DATE.log
 
+CREATE_FILES=$1
+
+echo "File created Success : $CREATE_FILES"
+
 FILES_TO_DELETE=$(find $APP_LOGS_DIR -name "*.log" -type f -mtime +14)
 
 echo "$FILES_TO_DELETE"
+
+echo "Script started at $DATE"
 
 # it will read the inputs from FILES_TO_DELETE variable and read 
 # every line and store in line variable 
@@ -16,3 +22,4 @@ do
     echo "Deleting and redirecting $line" &>> $LOGFILE
     rm -rf $line
 done <<< $FILES_TO_DELETE
+
