@@ -5,10 +5,6 @@ DATE=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$0
 LOGFILE=/root/shell-script/shelscript-logs/$SCRIPT_NAME-$DATE.log
 
-CREATE_FILES=$1
-
-echo "File created Success : $CREATE_FILES"
-
 FILES_TO_DELETE=$(find $APP_LOGS_DIR -name "*.log" -type f -mtime +14)
 
 echo "$FILES_TO_DELETE"
