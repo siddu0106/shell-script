@@ -13,6 +13,6 @@ echo "$FILES_TO_DELETE"
 # every line and store in line variable 
 while read line
 do
-    echo "Deleting and redirecting $line" &>>$LOGFILE
+    echo "Deleting and redirecting $line" &>> $LOGFILE
     rm -rf $line
 done <<< $FILES_TO_DELETE
